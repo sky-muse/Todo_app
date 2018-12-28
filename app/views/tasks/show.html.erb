@@ -1,0 +1,66 @@
+<div class="new-wrapper">
+  <div class="new-container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <h2 class="new-task">タスク詳細</h2>
+      </div>
+    </div>
+    <div class="task-index">
+      <div class="task-label">
+        <ul>
+          <li class="priority-label">優先度</li>
+          <li class="status-label">ステータス</li>
+          <li class="start_date-label">作業開始日</li>
+          <li class="scheduled_end_date-label">作業終了予定日</li>
+          <li class="pend_date-label">作業終了日</li>
+          <li class="title-label">タイトル / 説明</li>
+        </ul>
+      </div>
+
+        <div class="task-group-show">
+          <div class="state-group-show">
+            <ul>
+              <div class="task-priority">
+                <li><%= @task.priority %></li>
+              </div>
+              <div class="task-status">
+                <li><%= @task.status %></li>
+              </div>
+              <div class="task-start_date">
+                <li><%= @task.start_date %></li>
+              </div>
+              <div class="task-scheduled_end_date">
+                <li><%= @task.scheduled_end_date.strftime("%Y-%m-%d %H:%M") %></li>
+              </div>
+              <div class="task-end_date">
+                <li><%= @task.end_date %></li>
+              </div>
+
+            </ul>
+          </div>
+
+          <div class="title-show-group">
+            <div class="task-title-show">
+              <%= @task.title %>
+            </div>
+            <div class="task-description">
+              <%= simple_format(@task.description) %>
+            </div>
+          </div>
+
+          <div class="edit-group-show">
+            <div class="task-edit-show">
+              <%= link_to edit_task_path do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <div class="task-delete-show">
+              <%= link_to("/tasks/#{@task.id}",{method: "delete"}) do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

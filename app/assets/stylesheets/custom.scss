@@ -1,0 +1,409 @@
+.top-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn {
+  border: 1px solid #000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  color: #000;
+}
+
+.top-container {
+  padding-top: 150px;
+  h2 {
+    font-size: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+}
+
+.form-control {
+  height: 45px;
+}
+
+.new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 20px 0 20px;
+
+  .new-container {
+    padding-top: 20px;
+
+    .new-user {
+      margin-bottom: 40px;
+    }
+    .form-group {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.alert {
+  margin-bottom: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navi-container {
+  margin-top: 20px;
+  text-align: left;
+  width: 100vw;
+  height: 13vh;
+}
+.navi-bar {
+    list-style-type: none;
+}
+
+.navi-home span {
+  font-size: 40px;
+  color: black;
+  float: left;
+
+  p {
+    font-size: 14px;
+  }
+}
+.navi-right {
+  text-align: right;
+  color: black;
+
+  li {
+  font-size: 40px;
+  float: right;
+  margin-right: 40px;
+  }
+
+  span {
+    color: black;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.new-task {
+  margin-bottom: 80px;
+}
+
+.task-index {
+  width: 100vw;
+  height: 70vh;
+}
+
+
+//ラベル -----ここから-----
+.task-label {
+  width: 100vw;
+  height: 3vh;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  // border: 1px solid blue;
+  position: relative;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      // margin-right: 50px;
+    }
+  }
+}
+.priority-label {
+  // border: 1px solid green;
+  position: absolute;
+  left: 3%;
+
+}
+
+.status-label {
+  // margin-right: 35px;
+  position: absolute;
+  left: 8.5%;
+  // border: 1px solid green;
+}
+
+.start_date-label {
+  // margin-right: 25px;
+  position: absolute;
+  left: 17.5%;
+  // border: 1px solid green;
+}
+
+.scheduled_end_date-label {
+  // margin-right: 30px;
+  position: absolute;
+  left: 26.5%;
+  // border: 1px solid green;
+
+}
+
+.pend_date-label {
+  // margin-right: 225px;
+  position: absolute;
+  left: 38.2%;
+  // border: 1px solid green;
+
+}
+
+.title-label {
+  position: absolute;
+  left: 48%;
+  // border: 1px solid green;
+
+}
+//ラベル -----ここまで-----
+
+.task-group {
+  width: 90vw;
+  height: 9vh;
+  padding-top: 10px;
+  margin-left: 40px;
+  // border: 1px solid blue;
+  border-bottom: solid 2px #ddd;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+//詳細用
+.task-group-show {
+  width: 90vw;
+  height: 10vh;
+  margin-left: 40px;
+  // border: 1px solid blue;
+  border-bottom: solid 2px #ddd;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+
+.state-group {
+  width: 65%;
+  height: 100%;
+  // flex: 0 1 auto;   //flex-growの値 flex-shrinkの値 flex-basisの値（初期値は0 1 auto）
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 5px;
+    display: flex;
+  }
+}
+
+//詳細showのみ
+.state-group-show {
+  width: 65%;
+  height: 100%;
+  padding-top: 10px;
+  // flex: 0 1 auto;   //flex-growの値 flex-shrinkの値 flex-basisの値（初期値は0 1 auto）
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 5px;
+    display: flex;
+  }
+}
+
+
+//優先度
+.task-priority {
+  background-color: #00CCCC;
+  border: 1px solid #00CCCC;
+  border-radius: 10px;
+  width: 5vw;
+  height: 7vh;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+  display: table;
+
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+//ステータス
+.task-status {
+  background-color: #FFA500;
+  border: 1px solid #FFA500;
+  border-radius: 10px;
+  width: 7vw;
+  height: 7vh;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+  display: table;
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+//詳細用　作業開始日
+.task-start_date {
+  background-color: #FFBEDA;
+  border: 1px solid #FFBEDA;
+  border-radius: 10px;
+  width: 10vw;
+  height: 7vh;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+  display: table;
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+//詳細用　作業終了予定日
+.task-scheduled_end_date {
+  background-color: #FF69A3;
+  border: 1px solid #FF69A3;
+  border-radius: 10px;
+  width: 10vw;
+  height: 7vh;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+  display: table;
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+//詳細用　作業終了日
+.task-end_date {
+  background-color: #FF0461;
+  border: 1px solid #FF0461;
+  border-radius: 10px;
+  width: 10vw;
+  height: 7vh;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+  display: table;
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+
+
+.title-group {
+  width: 70%;
+  height: 100%;
+  flex: 0 1 auto;
+  align-items: center;
+}
+
+.task-title {
+  font-size: 20px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.edit-group {
+  width: 7%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+//詳細用編集/削除
+.edit-group-show {
+  width: 7%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+}
+
+.task-edit-show {
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.task-delete-show {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+}
+
+.fa-pencil-alt {
+  color: #008080;
+
+}
+
+.fa-trash-alt {
+  color: red;
+}
+
+//詳細用タイトル枠
+.title-show-group {
+  display: table-cell;
+  vertical-align: top;
+  width: 80%;
+  padding-left: 20px;
+  padding-top: 10px;
+
+}
+
+//小宰相タイトル
+.task-title-show {
+  width: 100%;
+  height: 25%;
+  font-weight: bold;
+  margin-bottom: 5px;
+  p {
+    // font-weight: bold;
+    // font-size: 14px;
+  }
+}
+
+//詳細用説明
+.task-description {
+  // color: blue;
+  font-size: 14px;
+  background-color: #eee;
+  height: 60%;
+}

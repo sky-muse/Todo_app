@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+    <div class="navi-container">
+      <ul class="navi-bar">
+        <div class="navi-home">
+          <li>
+            <%= link_to root_path do %>
+              <span><i class="fas fa-home"></i><p>HOME</p></span>
+            <% end %>
+          </li>
+        </div>
+        <div class="navi-right">
+          <li>
+            <%= link_to logout_path, method: :delete do %>
+              <span><i class="fas fa-sign-out-alt"></i><p>Log out</p></span>
+            <% end %>
+          </li>
+          <% if logged_in? %>
+            <li>
+              <%= link_to new_task_path do %>
+                <span><i class="fas fa-pen"></i><p>New Task</p></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to tasks_path do %>
+                <span><i class="fas fa-list-ul"></i><p>Task List</p></span>
+            </li>
+              <% end %>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+
+    <%= yield %>
+
+    <script>
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
+    </script>
+
+  </body>
+</html>

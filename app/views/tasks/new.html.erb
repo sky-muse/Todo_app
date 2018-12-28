@@ -1,0 +1,30 @@
+  <div class="new-wrapper">
+    <div class="new-container">
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <h2 class="new-user">タスク新規登録</h2>
+            <%= form_for @task do |f| %>
+              <div class="form-group">
+                <%= f.label "タイトル", class: 'form-text' %>
+                <%= f.text_field :title, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label "説明", class: 'form-text' %>
+                <%= f.text_area :description, class: 'form-control' %>
+              </div>
+
+              <div class="form-group">    <%# 作業終了予定日 %>
+                <%= f.label "作業終了予定日", class: 'form-text' %>
+                <%= f.datetime_select :scheduled_end_date, use_month_numbers: true, class: 'form-control' %>
+              </div>
+
+              <div class="form-group">    <%# 優先度（低、高） %>
+                <%= f.label "優先度", class: 'form-text' %>
+                <%= f.select :priority, [["高", "高"], ["低", "低"]] %>
+              </div>
+              <%= f.submit "登録", class: 'form-text' %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

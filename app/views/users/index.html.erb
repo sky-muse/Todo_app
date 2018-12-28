@@ -1,0 +1,12 @@
+<table>
+  <tbody>
+    <th>名前</th>
+    <th>メールアドレス</th>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,116 @@
+<div class="new-wrapper">
+  <div class="new-container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <h2 class="new-task">タスク一覧</h2>
+      </div>
+    </div>
+    <div class="task-index">
+      <div class="task-label">
+        <ul>
+          <li class="priority-label">優先度
+            <%= link_to sort: "priority" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "priority" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+          <li class="status-label">ステータス
+            <%= link_to sort: "status" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "status" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+          <li class="start_date-label">作業開始日
+            <%= link_to sort: "start_date" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "start_date" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+          <li class="scheduled_end_date-label">作業終了予定日
+            <%= link_to sort: "scheduled_end_date" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "scheduled_end_date" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+          <li class="pend_date-label">作業終了日
+            <%= link_to sort: "end_date" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "end_date" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+          <li class="title-label">タイトル
+            <%= link_to sort: "title" do %>
+              <i class="fas fa-angle-up"></i>
+            <% end %>
+            <%= link_to desc: "title" do %>
+              <i class="fas fa-angle-down"></i>
+            <% end %>
+          </li>
+      </div>
+      <% @tasks.each do |task| %>
+        <div class="task-group">
+          <div class="state-group">
+            <ul>
+              <div class="task-priority">
+                <li><%= task.priority %></li>
+              </div>
+              <div class="task-status">
+                <li><%= task.status_i18n %></li>
+              </div>
+              <div class="task-start_date">
+                 <li><%= task.start_date.nil? ? "未定" : task.start_date.strftime("%Y-%m-%d %H:%M") %></li>
+               </div>
+               <div class="task-scheduled_end_date">
+                 <li><%= task.scheduled_end_date.strftime("%Y-%m-%d %H:%M") %></li>
+               </div>
+               <div class="task-end_date">
+                 <li><%= task.end_date.nil? ? "未定" : task.end_date.strftime("%Y-%m-%d %H:%M") %></li>
+               </div>
+            </ul>
+          </div>
+          <div class="title-group">
+            <div class="task-title">
+              <p><%= link_to "#{task.title}", task_path(task.id) %></p>
+            </div>
+          </div>
+
+
+          <%= link_to task_date_update_path(task.id,start_date_param: task.id),method: :patch do %>
+            <div class="task-start_date">
+              <li>開始</li>
+            </div>
+          <% end %>
+          <%= link_to task_date_update_path(task.id,end_date_param: task.id) ,method: :patch  do %>
+            <div class="task-end_date">
+              <li>終了</li>
+            </div>
+          <% end %>
+
+
+          <div class="edit-group">
+            <div class="task-edit">
+              <%= link_to "/tasks/#{task.id}/edit" do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <div class="task-delete">
+              <%= link_to("/tasks/#{task.id}",{method: "delete"}) do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

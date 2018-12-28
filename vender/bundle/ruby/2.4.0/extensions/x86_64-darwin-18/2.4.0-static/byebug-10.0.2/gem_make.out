@@ -1,0 +1,19 @@
+current directory: /Users/murataayumi/todo/vender/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+/Users/murataayumi/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20181210-33907-1ynar1j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/murataayumi/todo/vender/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/murataayumi/todo/vender/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/murataayumi/todo/vender/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20181210-33907-le05cs/byebug
