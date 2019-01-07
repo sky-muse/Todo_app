@@ -10,4 +10,19 @@ class ApplicationController < ActionController::Base
   def logged_in?
     current_user.present?
   end
+
+  def authenticate_user
+    if current_user == nil
+      flash[:danger]= 'ログインが必要です'
+      redirect_to root_path
+    end
+  end
+
+  # def params_scheduled_end_date
+  #   @scheduled_end_date =
+  #     params[:task]["scheduled_end_date(1i)"].to_i,
+  #     params[:task]["scheduled_end_date(2i)"].to_i,
+  #     params[:task]["scheduled_end_date(3i)"].to_i
+  # end
+
 end

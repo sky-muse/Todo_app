@@ -91,7 +91,7 @@
 
 .task-index {
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
 }
 
 
@@ -101,59 +101,111 @@
   height: 3vh;
   margin-left: 50px;
   margin-bottom: 10px;
-  // border: 1px solid blue;
   position: relative;
 
   ul {
     display: flex;
     list-style-type: none;
-
-    li {
-      // margin-right: 50px;
-    }
   }
 }
+
 .priority-label {
-  // border: 1px solid green;
   position: absolute;
   left: 3%;
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 
 }
 
 .status-label {
-  // margin-right: 35px;
   position: absolute;
   left: 8.5%;
-  // border: 1px solid green;
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 }
 
 .start_date-label {
-  // margin-right: 25px;
   position: absolute;
   left: 17.5%;
-  // border: 1px solid green;
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 }
 
 .scheduled_end_date-label {
-  // margin-right: 30px;
   position: absolute;
   left: 26.5%;
-  // border: 1px solid green;
 
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 }
 
 .pend_date-label {
-  // margin-right: 225px;
   position: absolute;
   left: 38.2%;
-  // border: 1px solid green;
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 
 }
 
 .title-label {
   position: absolute;
   left: 48%;
-  // border: 1px solid green;
+
+  .fa-angle-up {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+  }
+  .fa-angle-down {
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+  }
 
 }
 //ラベル -----ここまで-----
@@ -297,8 +349,8 @@
 
 //詳細用　作業終了日
 .task-end_date {
-  background-color: #FF0461;
-  border: 1px solid #FF0461;
+  background-color: #FFC7AF;
+  border: 1px solid #FFC7AF;
   border-radius: 10px;
   width: 10vw;
   height: 7vh;

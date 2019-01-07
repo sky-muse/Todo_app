@@ -12,7 +12,6 @@
               <%= f.label "説明", class: 'form-text' %>
               <%= f.text_area :description ,class: 'form-control' %>
             </div>
-
             <div class="form-group">    <%# 作業終了予定日 %>
               <%= f.label "作業終了予定日", class: 'form-text' %>
               <%= f.datetime_select :scheduled_end_date, use_month_numbers: true, class: 'form-control' %>
@@ -22,7 +21,6 @@
               <%= f.label "優先度", class: 'form-text' %>
               <%= f.select :priority, [["高", "高"], ["低", "低"]] %>
             </div>
-
 
             <%= f.submit "保存", class: 'form-text' %>
           <% end %>

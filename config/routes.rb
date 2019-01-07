@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   get 'tasks/new'
   get 'sessions/new'
   root 'pages#index'
-
-  post "task/:id/update" => "tasks#update"
+  # get 'tasks/index2'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

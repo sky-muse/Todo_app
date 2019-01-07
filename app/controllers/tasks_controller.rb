@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user, {only: [:new, :index, :edit, :show,]}
+
   def index
     if params[:sort].nil?
       @tasks = current_user.tasks.order(params[:desc]).reverse
@@ -6,7 +8,6 @@ class TasksController < ApplicationController
       @tasks = current_user.tasks.order(params[:sort])
     end
   end
-
 
   def show
     @task = Task.find_by(id: params[:id])
@@ -18,11 +19,25 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find_by(id: params[:id])
-    if @task.update(task_params)
-      redirect_to tasks_path, success: '保存が完了しました'
+    if Date.valid_date?(
+      params[:task]["scheduled_end_date(1i)"].to_i,
+      params[:task]["scheduled_end_date(2i)"].to_i,
+      params[:task]["scheduled_end_date(3i)"].to_i
+    )
+      if @task.scheduled_end_date.future?
+        if @task.update(task_params)
+          redirect_to tasks_path, success: '保存が完了しました'
+        else
+          flash.now[:danger] = '保存に失敗しました'
+          render :edit
+        end
+      else
+        flash.now[:danger] = '作業終了予定日が過去の日付です'
+        render :new
+      end
     else
-      flash.now[:danger] = "保存に失敗しました"
-      render :edit
+        flash.now[:danger] = '存在しない日付です'
+        render :edit
     end
   end
 
@@ -46,13 +61,26 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.new(task_params)
-    if @task.save
-      redirect_to tasks_path, success: '登録が完了しました'
+    if Date.valid_date?(
+      params[:task]["scheduled_end_date(1i)"].to_i,
+      params[:task]["scheduled_end_date(2i)"].to_i,
+      params[:task]["scheduled_end_date(3i)"].to_i
+    )
+      if @task.scheduled_end_date.future?
+        if @task.save
+          redirect_to tasks_path, success: '登録が完了しました'
+        else
+          flash.now[:danger] = '登録に失敗しました'
+          render :new
+        end
+      else
+        flash.now[:danger] = '作業終了予定日が過去の日付です'
+        render :new
+      end
     else
-      flash.now[:danger] = '登録に失敗しました'
+      flash.now[:danger] = '存在しない日付です'
       render :new
     end
-
   end
 
   def destroy

@@ -18,8 +18,14 @@
       <ul class="navi-bar">
         <div class="navi-home">
           <li>
-            <%= link_to root_path do %>
-              <span><i class="fas fa-home"></i><p>HOME</p></span>
+            <% if logged_in? %>
+              <%= link_to tasks_path do %>
+                <span><i class="fas fa-home"></i><p>HOME</p></span>
+              <% end %>
+              <% else %>
+              <%= link_to root_path do %>
+                <span><i class="fas fa-home"></i><p>HOME</p></span>
+              <% end %>
             <% end %>
           </li>
         </div>

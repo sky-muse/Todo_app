@@ -24,16 +24,16 @@
                 <li><%= @task.priority %></li>
               </div>
               <div class="task-status">
-                <li><%= @task.status %></li>
+                <li><%= @task.status_i18n %></li>
               </div>
               <div class="task-start_date">
-                <li><%= @task.start_date %></li>
+                <li><%= @task.start_date.nil? ? "未定" : @task.start_date.strftime("%Y-%m-%d %H:%M") %></li>
               </div>
               <div class="task-scheduled_end_date">
                 <li><%= @task.scheduled_end_date.strftime("%Y-%m-%d %H:%M") %></li>
               </div>
               <div class="task-end_date">
-                <li><%= @task.end_date %></li>
+                <li><%= @task.end_date.nil? ? "未定" : @task.end_date.strftime("%Y-%m-%d %H:%M") %></li>
               </div>
 
             </ul>
