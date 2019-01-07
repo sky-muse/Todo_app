@@ -43,9 +43,12 @@ class TasksController < ApplicationController
 
   def date_update
     if !params[:start_date_param].nil?
-      task = Task.find_by(id: params[:start_date_param])
-      task.update(start_date: Time.now)
-      task.update(status: :processing)
+        task = Task.find_by(id: params[:start_date_param])
+        task.update(start_date: Time.now)
+        task.update(status: :processing)
+        if !task.end_date.nil?
+          task.update(end_date: nil)
+        end
     elsif !params[:end_date_param].nil?
       task = Task.find_by(id: params[:end_date_param])
       task.update(end_date: Time.now)

@@ -5,12 +5,19 @@
         <h2>Todoアプリ</h2>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-md-offset-4 col-md-3">
-        <%= link_to '新規登録', new_user_path, class: 'btn' %>
+
+      <div class="col-md-offset-3 col-md-3">
+        <p class="text-center">
+          <%= link_to '新規登録', new_user_path, class: 'btn' %>
+        </p>
+
       </div>
-      <div class="col-md-4">
-        <%= link_to 'ログイン', login_path, class: 'btn' %>
+      <div class="col-md-3">
+        <p class="text-center">
+          <%= link_to 'ログイン', login_path, class: 'btn' %>
+        </p>
       </div>
     </div>
   </div>
